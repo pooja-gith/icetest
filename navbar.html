@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <link rel="stylesheet" href="navbar.css" />
+
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="topnav" id="myTopnav">
+      <a href="#home" class="active">Home</a>
+      <a href="#news">News</a>
+      <a href="#contact">Contact</a>
+      <a href="#about">About</a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+
+    <!-- <div style="padding-left:16px">
+  <p>Resize the browser window to see how it works.</p>
+</div> -->
+    <form action="#">
+      <h2 class="home__herotitle">Pooja Indian Ice Cream</h2>
+      <h2 class="home__herosubtitle">How many bolls <br />would you like?</h2>
+
+      <div class="centerer">
+        <div class="home__herocont">
+          <img class="home__heroimg" src="./images/choc.jpg" alt="" />
+          <div class="home__flavorcont centerer">
+            <div class="home__inputcont centerer">
+              <input
+                class="home__inputcontitem"
+                type="number"
+                id="quantityChoc"
+                name="quantity"
+                min="0"
+                value="0"
+                max="5"
+                onChange="bollsOrderedChoc()"
+              />
+              <button class="home__inputcontitem" type="submit">order</button>
+            </div>
+            <div class="label1" for="quantity">Between 1 and 5</div>
+          </div>
+        </div>
+        <div class="home__herocont">
+          <img class="home__heroimg" src="./images/van.jpg" alt="" />
+          <div class="home__flavorcont centerer">
+            <div class="home__inputcont centerer">
+              <input
+                class="home__inputcontitem"
+                type="number"
+                id="quantityVan"
+                name="quantity"
+                min="0"
+                value="0"
+                max="5"
+                onChange="bollsOrderedVan()"
+              />
+              <button class="home__inputcontitem" type="submit">order</button>
+            </div>
+            <div class="label1" for="quantity">Between 1 and 5</div>
+          </div>
+        </div>
+        <div class="home__herocont">
+          <img class="home__heroimg" src="./images/strawberry.jpg" alt="" />
+          <div class="home__flavorcont centerer">
+            <div class="home__inputcont centerer">
+              <input
+                class="home__inputcontitem"
+                type="number"
+                id="quantityStrawberry"
+                name="quantity"
+                min="0"
+                value="0"
+                max="5"
+                onChange="bollsOrderedStrawberry()"
+              />
+              <button class="home__inputcontitem" type="submit">order</button>
+            </div>
+            <div class="label1" for="quantity">Between 1 and 5</div>
+          </div>
+        </div>
+      </div>
+    </form>
+    <h1>OOO <span id="demo" class="home__order">val Total</span></h1>
+    <h1>OOO <span id="demoV" class="home__order">val Total</span></h1>
+    <h1>OOO <span id="demoS" class="home__order">val Total</span></h1>
+    <h1>Total<span id="demoTotal" class="home__order">val Total</span></h1>
+    <script>
+      function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        } else {
+          x.className = "topnav";
+        }
+      }
+      function bollsOrderedChoc() {
+        var inputChocNumb = document.getElementById("quantityChoc").value;
+        document.getElementById("demo").innerHTML =
+          "You selected: " + inputChocNumb;
+        console.log("c" + inputChocNumb);
+      }
+      function bollsOrderedVan() {
+        var inputVanNumb = document.getElementById("quantityVan").value;
+        document.getElementById("demoV").innerHTML =
+          "You selected: " + inputVanNumb;
+        console.log("v" + inputVanNumb);
+      }
+      function bollsOrderedStrawberry() {
+        var inputStrawberryNumb =
+          document.getElementById("quantityStrawberry").value;
+        document.getElementById("demoS").innerHTML =
+          "You selected: " + inputStrawberryNumb;
+        console.log("c" + inputChocNumb);
+        console.log("v" + inputVanNumb);
+        console.log("v" + inputVanNumb);
+        console.log("v" + inputVanNumb);
+
+        var total = inputChocNumb + inputVanNumb + inputStrawberryNumb;
+        document.getElementById("demoTotal").innerHTML =
+          "Your total : " + total;
+      }
+    </script>
+  </body>
+</html>
